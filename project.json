@@ -1,0 +1,10 @@
+{
+    "project_name": "smart_objects",
+    "project_version": "1.0.0",
+    "project_url": "",
+    "project_requirements": {
+        "drag_n_drop": "https://github.com/vbrawl/drag_n_drop_php"
+    },
+    "project_library_directory": "pm_library",
+    "project_relocation_config": "relocation.php"
+}
