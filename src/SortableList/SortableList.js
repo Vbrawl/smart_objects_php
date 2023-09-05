@@ -17,17 +17,27 @@
     }
 
     function reindex(node) {
-        for (let i = 0; i < node.children.length; i++) {
-            const child = node.children[i];
+        for (let i = 1; i <= node.children.length; i++) {
+            const child = node.children[i-1];
             child.setAttribute('smartobj-sortable-list__item-index', i);
         }
     }
 
     function modify_sorting(evt) {
         const targetIndex = parseInt(evt.target.getAttribute('smartobj-sortable-list__item-index'));
+        const lastIndex = evt.target.parentElement.children.length;
         const draggableIndex = parseInt(evt.detail.original_position.getAttribute('smartobj-sortable-list__item-index'));
-        console.log(draggableIndex, targetIndex);
-        evt.target.parentElement.insertBefore(evt.detail.original_position, (draggableIndex < targetIndex ? null : evt.target));
+        var before_child = evt.target;
+
+        if(targetIndex > draggableIndex) {
+            if(targetIndex === lastIndex) {
+                before_child = null;
+            }
+            else {
+                before_child = evt.target.parentElement.querySelector(`*[smartobj-sortable-list__item-index="${targetIndex+1}"]`);
+            }
+        }
+        evt.target.parentElement.insertBefore(evt.detail.original_position, before_child);
     }
 
     smart_objects.SortableList = class extends HTMLElement {
