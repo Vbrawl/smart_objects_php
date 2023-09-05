@@ -21,17 +21,30 @@ require_once('main.php');
             background: blue;
         }
         .test2 {
-            display: inline-block;
+            display: inline-flex;
             width: 40rem;
             height: 80rem;
             background: green;
+            flex-flow: row wrap;
+            align-content: start;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <smartobj-sortable-list class="test2" x-padding="100" y-padding="100">
-        <div class="test"></div>
-        <div class="test3"></div>
+        <div class="test">1</div>
+        <div class="test3">2</div>
+        <div class="test">3</div>
+        <div class="test3">4</div>
+        <div class="test">5</div>
+        <div class="test3">6</div>
+        <div class="test">7</div>
+        <div class="test3">8</div>
+        <div class="test">9</div>
+        <div class="test3">10</div>
+        <div class="test">11</div>
+        <div class="test3">12</div>
     </smartobj-sortable-list>
 </body>
 </html>
