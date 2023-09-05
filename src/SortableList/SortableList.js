@@ -1,13 +1,17 @@
 
 (function(smart_objects, undefined) {
 
-    // smartobj-sortable-list__item-initialized = "|false|true" => ""|"false": Item was not initialized by the list. "true": Item is already initialized by the list.
+    // smartobj-sortable-list__draggable = "|false" => "": Item is draggable. "false": Item is not draggable.
+    // x-padding = "num" => A number representing the padding (in pixels) before items are moved in the X axis. (DEFAULT: 0)
+    // y-padding = "num" => A number representing the padding (in pixels) before items are moved in the Y axis. (DEFAULT: 0)
+    // smartobj-sortable-list__item-initialized(AUTOMATICALLY ADDED) = "|false|true" => ""|"false": Item was not initialized by the list. "true": Item is already initialized by the list.
+    // smartobj-sortable-list__item-index(AUTOMATICALLY ADDED) = "num" => A number representing the index of the element in the list.
 
     smart_objects.loaded_objects = smart_objects.loaded_objects || [];
     smart_objects.loaded_objects.push("SortableList");
 
     function make_draggable(node, x_padding, y_padding) {
-        if(!node.classList.contains("drag-n-drop__placeholder") && node.getAttribute('smartobj-sortable-list__item-initialized') !== 'true') {
+        if(!node.classList.contains("drag-n-drop__placeholder") && node.getAttribute('smartobj-sortable-list__item-initialized') !== 'true' && node.getAttribute('smartobj-sortable-list__draggable') !== "false") {
             node.setAttribute('drag-n-drop', 'draggable');
             node.setAttribute('drag-n-drop-x-padding', x_padding);
             node.setAttribute('drag-n-drop-y-padding', y_padding);
