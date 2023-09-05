@@ -4,8 +4,6 @@ namespace SMART_OBJECTS {
     require_once('relocation.php');
     require_once(DRAG_N_DROP_PATH.'/main.php');
 
-    // require_once(SMART_OBJECTS_PATH.'/src');
-
     $drag_n_drop_loaded = false;
     function load_draggable() {
         global $drag_n_drop_loaded;
@@ -21,4 +19,8 @@ namespace SMART_OBJECTS {
         load_file(SMART_OBJECTS_PATH.'/src/SortableList/SortableList.js', 'defer');
     }
 
+    function loadBurgerButton() {
+        load_file(SMART_OBJECTS_PATH.'/src/BurgerButton/BurgerButton.css');
+        load_file(SMART_OBJECTS_PATH.'/src/BurgerButton/BurgerButton.js', 'defer');
+    }
 }
