@@ -45,6 +45,10 @@ require_once('main.php');
         <div class="test3">10</div>
         <div class="test">11</div>
         <div class="test3">12</div>
+        <smartobj-sortable-list class="test2" style="background: purple" x-padding="100" y-padding="100" smartobj-sortable-list__draggable="false">
+            <div class="test">1</div>
+            <div class="test3">2</div>
+        </smartobj-sortable-list>
     </smartobj-sortable-list>
 </body>
 </html>
