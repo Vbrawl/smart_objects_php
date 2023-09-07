@@ -6,5 +6,8 @@
         "drag_n_drop": "https://github.com/vbrawl/drag_n_drop_php"
     },
     "project_library_directory": "pm_library",
-    "project_relocation_config": "relocation.php"
+    "project_input_resource_directory": "resources",
+    "project_output_resource_directory": "pm_resources",
+    "project_relocation_config": "relocation.php",
+    "project_javascript_relocation_config": "relocation.js"
 }
