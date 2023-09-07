@@ -1,0 +1,67 @@
+
+
+
+smartobj-file-selector {
+    border: black solid 2px;
+    width: 30rem;
+    max-height: 30rem;
+
+    display: flex;
+    flex-flow: row wrap;
+
+    overflow-y: auto;
+    padding: 1rem 0;
+    cursor: pointer;
+}
+
+smartobj-file-selector .label {
+    margin: auto;
+}
+
+
+smartobj-file-selector .image_box {
+    display: inline-flex;
+    width: 10rem;
+    height: 10rem;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    position: relative;
+}
+
+smartobj-file-selector .image_box .image_container {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+smartobj-file-selector .image_box .image_container img {
+    max-width: 100%;
+    max-height: 10rem;
+}
+
+smartobj-file-selector .image_box .image_container:hover::after,
+smartobj-file-selector .image_box .image_container:hover::before {
+    content: '';
+    background: black;
+    border-radius: 33rem;
+    cursor: pointer;
+
+    display: inline-block;
+    width: 10rem;
+    height: .3rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+smartobj-file-selector .image_box .image_container:hover::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+smartobj-file-selector.hovering {
+    outline: blue solid 2px;
+}
