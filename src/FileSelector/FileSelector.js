@@ -121,7 +121,7 @@
                     reader.readAsDataURL(file);
                 }
                 else {
-                    this.add_item(window.relocation.SMART_OBJECTS_RESOURCES_PATH+'/papers.png', fileid);
+                    this.add_item(window.relocation.SMART_OBJECTS_RESOURCES_PATH+'/FileSelector/papers.png', fileid);
                 }
             }
 
