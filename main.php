@@ -1,5 +1,6 @@
 <?php
-
+// NOTE: We added "src" as resources to avoid sending the whole file through php
+// load_file should just add a link to the file.
 namespace SMART_OBJECTS {
     require_once('relocation.php');
     require_once(DRAG_N_DROP_PATH.'/main.php');
@@ -26,17 +27,17 @@ namespace SMART_OBJECTS {
 
     function loadSortableList() {
         load_draggable();
-        load_file(SMART_OBJECTS_PATH.'/src/SortableList/SortableList.js', 'defer');
+        load_file(SMART_OBJECTS_RESOURCES_PATH.'/SortableList/SortableList.js', 'defer');
     }
 
     function loadBurgerButton() {
-        load_file(SMART_OBJECTS_PATH.'/src/BurgerButton/BurgerButton.css');
-        load_file(SMART_OBJECTS_PATH.'/src/BurgerButton/BurgerButton.js', 'defer');
+        load_file(SMART_OBJECTS_RESOURCES_PATH.'/BurgerButton/BurgerButton.css');
+        load_file(SMART_OBJECTS_RESOURCES_PATH.'/BurgerButton/BurgerButton.js', 'defer');
     }
 
     function loadFileSelector() {
         load_mds();
-        load_file(SMART_OBJECTS_PATH.'/src/FileSelector/FileSelector.css');
-        load_file(SMART_OBJECTS_PATH.'/src/FileSelector/FileSelector.js', 'defer');
+        load_file(SMART_OBJECTS_RESOURCES_PATH.'/FileSelector/FileSelector.css');
+        load_file(SMART_OBJECTS_RESOURCES_PATH.'/FileSelector/FileSelector.js', 'defer');
     }
 }
