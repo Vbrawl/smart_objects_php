@@ -40,4 +40,10 @@ namespace SMART_OBJECTS {
         load_file(SMART_OBJECTS_RESOURCES_PATH.'/FileSelector/FileSelector.css');
         load_file(SMART_OBJECTS_RESOURCES_PATH.'/FileSelector/FileSelector.js', 'defer');
     }
+
+    function loadPopUp() {
+        load_mds();
+        load_file(SMART_OBJECTS_RESOURCES_PATH.'/PopUp/PopUp.css');
+        load_file(SMART_OBJECTS_RESOURCES_PATH.'/PopUp/PopUp.js', 'defer');
+    }
 }
