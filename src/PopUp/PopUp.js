@@ -10,32 +10,40 @@
         constructor() {
             super();
 
-            const container = document.createElement("div");
-            container.classList.add("container");
+            this.init = false;
+        }
 
-            while (this.children.length !== 0) {
-                container.appendChild(this.children[0]);
+        connectedCallback() {
+            if(!this.init) {
+                const container = document.createElement("div");
+                container.classList.add("container");
+
+                container.innerText = this.innerText;
+                this.innerText = '';
+                while (this.children.length !== 0) {
+                    container.appendChild(this.children[0]);
+                }
+
+                container.addEventListener("nds-point", (evt) => {
+                    evt.stopPropagation();
+                });
+
+                this.addEventListener("nds-point", (evt) => {
+                    const event = new CustomEvent('smartobj-popup-closed', {cancelable: true, bubbles: true});
+                    if(evt.currentTarget.dispatchEvent(event)) {
+                        this.setAttribute("hidden", true);
+                    }
+                });
+
+                this.addEventListener('smartobj-popup-open', (evt) => {
+                    const event = new CustomEvent('smartobj-popup-opened', {cancelable: true, bubbles: true});
+                    if(evt.currentTarget.dispatchEvent(event)) {
+                        this.removeAttribute('hidden');
+                    }
+                });
+
+                this.appendChild(container);
             }
-
-            container.addEventListener("nds-point", (evt) => {
-                evt.stopPropagation();
-            });
-
-            this.addEventListener("nds-point", (evt) => {
-                const event = new CustomEvent('smartobj-popup-closed', {cancelable: true, bubbles: true});
-                if(evt.currentTarget.dispatchEvent(event)) {
-                    this.setAttribute("hidden", true);
-                }
-            });
-
-            this.addEventListener('smartobj-popup-open', (evt) => {
-                const event = new CustomEvent('smartobj-popup-opened', {cancelable: true, bubbles: true});
-                if(evt.currentTarget.dispatchEvent(event)) {
-                    this.removeAttribute('hidden');
-                }
-            });
-
-            this.appendChild(container);
         }
 
         static open_popup(element) {
