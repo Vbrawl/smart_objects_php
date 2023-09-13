@@ -17,6 +17,6 @@ require_once(SMART_OBJECTS_PATH.'/main.php');
 </head>
 <body>
     <div style="width: 100px; height: 100px; background: red"></div>
-    <smartobj-popup><div style="width: 1000px; height: 1000px; background: green"></div></smartobj-popup>
+    <smartobj-popup>HelloWorld</smartobj-popup>
 </body>
 </html>
