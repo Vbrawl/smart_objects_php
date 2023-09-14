@@ -18,10 +18,8 @@
                 const container = document.createElement("div");
                 container.classList.add("container");
 
-                container.innerText = this.innerText;
-                this.innerText = '';
-                while (this.children.length !== 0) {
-                    container.appendChild(this.children[0]);
+                while (this.childNodes.length !== 0) {
+                    container.appendChild(this.childNodes[0]);
                 }
 
                 container.addEventListener("nds-point", (evt) => {
