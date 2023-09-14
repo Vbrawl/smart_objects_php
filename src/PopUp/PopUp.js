@@ -29,24 +29,20 @@
                 this.addEventListener("nds-point", (evt) => {
                     const event = new CustomEvent('smartobj-popup-closed', {cancelable: true, bubbles: true});
                     if(evt.currentTarget.dispatchEvent(event)) {
-                        this.setAttribute("hidden", true);
+                        this.close_popup();
                     }
                 });
-
-                this.addEventListener('smartobj-popup-open', (evt) => {
-                    const event = new CustomEvent('smartobj-popup-opened', {cancelable: true, bubbles: true});
-                    if(evt.currentTarget.dispatchEvent(event)) {
-                        this.removeAttribute('hidden');
-                    }
-                });
-
+                
                 this.appendChild(container);
             }
         }
+        
+        open_popup() {
+            this.removeAttribute('hidden');
+        }
 
-        static open_popup(element) {
-            const event = new CustomEvent('smartobj-popup-open', {cancelable: false, bubbles: true});
-            element.dispatchEvent(event);
+        close_popup() {
+            this.setAttribute('hidden', true);
         }
     }
 
