@@ -5,7 +5,7 @@ smartobj-popup {
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, .4);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 }
@@ -14,7 +14,7 @@ smartobj-popup .container {
     background: rgb(255, 255, 230);
     outline: solid rgb(255, 255, 230) 1rem;
     
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
